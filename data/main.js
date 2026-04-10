@@ -7,7 +7,7 @@ const icons = {
  "D.O.T.S":"🟢"
 };
 
-let currentLang = "en";
+let currentLang = localStorage.getItem("lang") || "en";
 
 const LANGS = {
   en: LANG,
@@ -24,7 +24,9 @@ langBtn.onclick = ()=>{
 
 document.querySelectorAll(".langItem").forEach(el=>{
   el.onclick = ()=>{
+
     currentLang = el.dataset.lang;
+    localStorage.setItem("lang", currentLang);
     langPopup.style.display = "none";
 
     // refresh UI
