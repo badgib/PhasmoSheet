@@ -158,7 +158,7 @@ const LANG_PL = {
       name: "The Twins",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Działa w dwóch miejscach"
+      hint: "Wydarzenia w dwóch miejscach"
     },
     "Wraith": {
       name: "Wraith",

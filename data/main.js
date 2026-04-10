@@ -126,16 +126,7 @@ function render(){
           : [...eliminated,g.id];
         render();
         return;
-      }
-
-      // header.innerText = t().ghosts[g.id].name;
-      // info.innerHTML = `
-      //   ${t().sanity}: ${g.sanity}<br>
-      //   ${t().speed}: ${g.speed}<br><br>
-      //   💡 ${t().ghosts[g.id].hint}
-      // `;
-      // popup.style.display="block";
-    };
+      }};
 
     const evs = g.evidence.filter(e=>e!=="Orbs");
 
