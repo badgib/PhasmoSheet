@@ -26,7 +26,6 @@ document.querySelectorAll(".langItem").forEach(el=>{
   el.onclick = ()=>{
 
     currentLang = el.dataset.lang;
-    console.log("Selected language:", currentLang);
     localStorage.setItem("lang", currentLang);
     langPopup.style.display = "none";
 

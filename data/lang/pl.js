@@ -44,31 +44,31 @@ const LANG_PL = {
       name: "Gallu",
       sanity: "60-40%",
       speed: "Szybki-wolny",
-      hint: "Trzy stany, zmienia się z solą, kadzidłem i/lub krzyżem"
+      hint: "Trzy stany, zmienia się z solą, kadzidłem i/lub krzyżem. Normalny→wściekły→osłabiony"
     },
     "Goryo": {
       name: "Goryo",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Kropki widoczne tylko na kamerze"
+      hint: "Kropki widoczne tylko na kamerze. Nie zmienia pokojów"
     },
     "Hantu": {
       name: "Hantu",
       sanity: "50%",
       speed: "Zależna od temperatury",
-      hint: "Przyspiesza w niskich temperaturach"
+      hint: "Przyspiesza w niskich temperaturach. Widoczny oddech. Nie może włączyć korków. Nie przyśpiesza przy LOS"
     },
     "Jinn": {
       name: "Jinn",
       sanity: "50%",
       speed: "Szybki z zasilaniem",
-      hint: "Szybki gdy korki są włączone"
+      hint: "Szybki gdy korki są włączone. Nie może wyłączyć korków"
     },
     "Mare": {
       name: "Mare",
       sanity: "60/40% (włącznik w pokoju)",
       speed: "Normalna",
-      hint: "Silniejszy w ciemnościach"
+      hint: "Silniejszy w ciemnościach. Nie może włączyć świateł"
     },
     "Mimic": {
       name: "The Mimic",
@@ -86,13 +86,13 @@ const LANG_PL = {
       name: "Myling",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Bardzo ciche kroki"
+      hint: "Bardzo ciche kroki. Częste dźwięki na paraboli/dyktafonie"
     },
     "Obake": {
       name: "Obake",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Unikatowe ślady UV"
+      hint: "Może chwilomo zmienić model w trakcie polowania. Sześć palców. UV zawodny"
     },
     "Obambo": {
       name: "Obambo",
@@ -104,13 +104,13 @@ const LANG_PL = {
       name: "Oni",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Bardzo aktywny duch"
+      hint: "Bardzo aktywny w pobliżu wielu ludzi. 2x spadek psychiki przy wydarzeniach. Brak mgły"
     },
     "Onryo": {
       name: "Onryo",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Świecę zapobiegają polowaniom"
+      hint: "Nie zacznie polowania jeśli świeca się pali. Rozpoczyna polowanie po zgaszeniu świec (2). Nie może podpalać"
     },
     "Phantom": {
       name: "Phantom",
@@ -164,19 +164,19 @@ const LANG_PL = {
       name: "Wraith",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Nie zostawia śladów"
+      hint: "Nie rozsypuje soli"
     },
     "Yokai": {
       name: "Yokai",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Wyzwolony przez głos"
+      hint: "Gadanie go wkurza"
     },
     "Yurei": {
       name: "Yurei",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Silny wyciek psychiki"
+      hint: "Szybko wysysa psychikę"
     },
   }
 };

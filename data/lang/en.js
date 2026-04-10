@@ -26,7 +26,7 @@ const LANG = {
       name: "Dayan",
       sanity: "50%",
       speed: "Normal",
-      hint: "Speed depends on player movements"
+      hint: "♀ Speed depends on player movements"
     },
     "Demon": {
       name: "Demon",
@@ -38,40 +38,40 @@ const LANG = {
       name: "Deogen",
       sanity: "40%",
       speed: "Fast→slow",
-      hint: "Always knows where you are"
+      hint: "Always knows where you are. Don't hide"
     },
     "Gallu": {
       name: "Gallu",
       sanity: "60-40%",
       speed: "Fast-slow",
-      hint: "Three states, changes with salt, incense and/or crucifix"
+      hint: "Three states, changes with salt, incense and/or crucifix. Normal→enraged→weakened"
     },
     "Goryo": {
       name: "Goryo",
       sanity: "50%",
       speed: "Normal",
-      hint: "DOTS only visible on camera"
+      hint: "DOTS only visible on camera. Won't switch rooms"
     },
     "Hantu": {
       name: "Hantu",
       sanity: "50%",
       speed: "Cold dependent",
-      hint: "Faster in cold temperatures"
+      hint: "Faster in cold temperatures. Visible breath. Can't turn on breaker. No LOS speedup"
     },
     "Jinn": {
       name: "Jinn",
       sanity: "50%",
       speed: "Fast w/ power",
-      hint: "Faster with breaker on"
+      hint: "Breaker affects speed. Can't turn off breaker"
     },
     "Mare": {
       name: "Mare",
       sanity: "60/40% (lightswitch in room)",
       speed: "Normal",
-      hint: "Stronger in darkness"
+      hint: "Stronger in darkness. Can't turn lights on"
     },
     "Mimic": {
-      name: "The Mimic",
+      name: "Mimic",
       sanity: "Varies",
       speed: "Varies",
       hint: "Copies other ghosts"
@@ -80,19 +80,19 @@ const LANG = {
       name: "Moroi",
       sanity: "50%",
       speed: "Scaling fast with avg. sanity",
-      hint: "Curses players, drains sanity"
+      hint: "Curses players. Drains sanity"
     },
     "Myling": {
       name: "Myling",
       sanity: "50%",
       speed: "Normal",
-      hint: "Very quiet footsteps"
+      hint: "Very quiet footsteps. Frequent parabolic/recorder events"
     },
     "Obake": {
       name: "Obake",
       sanity: "50%",
       speed: "Normal",
-      hint: "Unique fingerprints"
+      hint: "Can blink model during hunt to a different one. Six fingers. UV unreliable"
     },
     "Obambo": {
       name: "Obambo",
@@ -104,19 +104,19 @@ const LANG = {
       name: "Oni",
       sanity: "50%",
       speed: "Normal",
-      hint: "Very active ghost"
+      hint: "Very active around many people. Double sanity drain. No mist"
     },
     "Onryo": {
       name: "Onryo",
       sanity: "50%",
       speed: "Normal",
-      hint: "Candles prevent hunts"
+      hint: "Won't hunt with firelight lit. Will hunt after blowing firelights. Can't light fires"
     },
     "Phantom": {
       name: "Phantom",
       sanity: "50%",
       speed: "Normal",
-      hint: "Disappears in photos"
+      hint: "Disappears after photos"
     },
     "Poltergeist": {
       name: "Poltergeist",
@@ -127,18 +127,18 @@ const LANG = {
     "Raiju": {
       name: "Raiju",
       sanity: "65%",
-      speed: "Normal",
-      hint: "Fast near electronics"
+      speed: "Fast near electronics",
+      hint: "Electronics boost speed"
     },
     "Revenant": {
       name: "Revenant",
       sanity: "50%",
-      speed: "Normal",
-      hint: "Slow until it sees you"
+      speed: "Slow→fast",
+      hint: "Very fast when chasing"
     },
     "Shade": {
       name: "Shade",
-      sanity: "50%",
+      sanity: "30%",
       speed: "Normal",
       hint: "Very shy"
     },
@@ -150,27 +150,27 @@ const LANG = {
     },
     "Thaye": {
       name: "Thaye",
-      sanity: "50%",
-      speed: "Normal",
+      sanity: "75%",
+      speed: "Ages down",
       hint: "Ages and weakens"
     },
     "The Twins": {
       name: "The Twins",
       sanity: "50%",
-      speed: "Normal",
+      speed: "Dual speed",
       hint: "Acts in two places"
     },
     "Wraith": {
       name: "Wraith",
       sanity: "50%",
       speed: "Normal",
-      hint: "Does not leave footprints"
+      hint: "Does not disturb salt"
     },
     "Yokai": {
       name: "Yokai",
-      sanity: "50%",
+      sanity: "80%",
       speed: "Normal",
-      hint: "Triggered by voice"
+      hint: "Voice increases aggression"
     },
     "Yurei": {
       name: "Yurei",
