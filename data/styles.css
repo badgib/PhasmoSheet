@@ -192,13 +192,13 @@ h1 { padding:10px; }
 /* selected state */
 .clueButton.active {
   background: rgba(0, 200, 0, 0.35) !important;
-  border: 1px solid rgba(0, 200, 0, 0.7) !important;
+  /* border: 1px solid rgba(0, 200, 0, 0.7) !important; */
 }
 
 /* excluded state — FORCE override everything */
 .clueButton.excluded {
   background: rgba(255, 0, 0, 0.45) !important;
-  border: 1px solid rgba(255, 0, 0, 0.9) !important;
+  /* border: 1px solid rgba(255, 0, 0, 0.9) !important; */
   color: #ff4d4d !important;
 }
 

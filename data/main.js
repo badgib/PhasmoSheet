@@ -134,6 +134,26 @@ function render(){
   orbsCol.innerHTML = `<h3>👻 ${t().orbs}</h3>`;
   noOrbsCol.innerHTML = `<h3>🚫 ${t().noOrbs}</h3>`;
 
+  const sortedGhosts = [...ghosts].sort((a, b) => {
+
+    const matchA =
+      selected.every(e => a.evidence.includes(e)) &&
+      excluded.every(e => !a.evidence.includes(e));
+
+    const matchB =
+      selected.every(e => b.evidence.includes(e)) &&
+      excluded.every(e => !b.evidence.includes(e));
+
+    const scoreA = (!matchA ? 1 : 0);
+    const scoreB = (!matchB ? 1 : 0);
+
+    if (scoreA !== scoreB) return scoreA - scoreB;
+
+    return t().ghosts[a.id]?.name?.localeCompare(
+      t().ghosts[b.id]?.name || a.id
+    ) || 0;
+  });
+
   const possibleGhosts = ghosts.filter(g =>
     selected.every(e => g.evidence.includes(e)) &&
     excluded.every(e => !g.evidence.includes(e)) &&
@@ -184,7 +204,7 @@ function render(){
   document.querySelector("#orbsCol h3").onclick = ()=>setFocus("orbs");
   document.querySelector("#noOrbsCol h3").onclick = ()=>setFocus("noOrbs");
 
-  ghosts.forEach(g=>{
+  sortedGhosts.forEach(g=>{
     const hasOrbs = g.evidence.includes("Orbs");
     // const match = selected.every(e=>g.evidence.includes(e));
     const match =
