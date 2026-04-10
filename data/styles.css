@@ -206,3 +206,9 @@ h1 { padding:10px; }
 .clueButton.excluded:hover {
   background: rgba(255, 0, 0, 0.55) !important;
 }
+
+.clueButton.disabled {
+  opacity: 0.3 !important;
+  pointer-events: none !important;
+  filter: grayscale(100%) !important;
+}

@@ -108,6 +108,19 @@ function meta(id){
 
 function setFocus(mode){
   focus = (focus === mode) ? "all" : mode;
+  if(focus==="all"){
+    selected = selected.filter(x => x !== "Orbs");
+    excluded = excluded.filter(x => x !== "Orbs");
+  }
+  else if(focus==="noOrbs"){
+
+    excluded = [...new Set([...excluded, "Orbs"])]
+    selected = selected.filter(x => x !== "Orbs");
+  }
+  else if(focus==="orbs"){
+    selected = [...new Set([...selected, "Orbs"])]
+    excluded = excluded.filter(x => x !== "Orbs");
+  }
   render();
 }
 
@@ -115,24 +128,52 @@ function render(){
 
   orbsCol.innerHTML = `<h3>👻 ${t().orbs}</h3>`;
   noOrbsCol.innerHTML = `<h3>🚫 ${t().noOrbs}</h3>`;
-  // let currentControls = ;
+
+  const possibleGhosts = ghosts.filter(g =>
+    selected.every(e => g.evidence.includes(e)) &&
+    excluded.every(e => !g.evidence.includes(e)) &&
+    !eliminated.includes(g.id)
+  );
+
+  const possibleEvidenceSet = new Set();
+
+  possibleGhosts.forEach(g => {
+    g.evidence.forEach(ev => {
+      if (ev !== "Orbs") { // ignore orbs if needed
+        possibleEvidenceSet.add(ev);
+      }
+    });
+  });
   controls.querySelectorAll(".clueButton").forEach(btn=>{
+    
+    const key = Object.keys(icons).find(
+      k => icons[k] === btn.innerText.slice(0, 2)
+    );
     if (selected.includes(Object.keys(icons).find(k => icons[k] === btn.innerText.slice(0, 2)))){
       btn.classList.add("active");
       btn.classList.remove("excluded");
-      console.log("selected");
     } 
     else if (excluded.includes(Object.keys(icons).find(k => icons[k] === btn.innerText.slice(0, 2)))){
       btn.classList.add("excluded");
       btn.classList.remove("active");
-      console.log("excluded");
     }
     else{
       btn.classList.remove("active");
       btn.classList.remove("excluded");
-      console.log("none", selected);
     }
-    
+    if (
+      !possibleEvidenceSet.has(key) &&
+      !selected.includes(key) &&
+      !excluded.includes(key)
+    ) {
+      btn.classList.add("disabled");
+      btn.style.pointerEvents = "none";
+      btn.style.opacity = "0.3";
+    } else {
+      btn.classList.remove("disabled");
+      btn.style.pointerEvents = "auto";
+      btn.style.opacity = "1";
+    }
   });
 
   document.querySelector("#orbsCol h3").onclick = ()=>setFocus("orbs");
