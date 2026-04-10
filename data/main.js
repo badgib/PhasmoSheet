@@ -57,6 +57,11 @@ let focus = "all";
 title.innerText = t().title;
 close.innerText = t().close;
 
+
+const tooltip = document.createElement("div");
+tooltip.className = "tooltip";
+document.body.appendChild(tooltip);
+
 Object.keys(t().evidence).forEach(ev=>{
   const btn=document.createElement("div");
   btn.className="btn clueButton";
@@ -194,6 +199,7 @@ function render(){
 
     const div=document.createElement("div");
     div.className="ghost";
+    div.dataset.hint = meta.hint;
 
     if(dim || !match) div.classList.add("dim");
     if(elim) div.classList.add("elim");
@@ -236,7 +242,11 @@ function render(){
 
         <!-- RIGHT: hint -->
         <div class="ghostRight">
-          ${meta.hint}
+          <img 
+            src="data/${g.id.toLowerCase().replace(/\s+/g, "_")}.png"
+            class="ghostImg"
+            
+          />
         </div>
 
       </div>
@@ -244,6 +254,34 @@ function render(){
 
     (hasOrbs?orbsCol:noOrbsCol).appendChild(div);
   });
+
+  document.querySelectorAll(".ghost").forEach(el => {
+
+    let tooltipTimeout;
+
+    el.onmouseenter = () => {
+      if (el.classList.contains("dim")) return;
+      tooltipTimeout = setTimeout(() => {
+        tooltip.innerText = el.dataset.hint;
+        tooltip.style.opacity = "1";
+      }, 120);
+    };
+
+    el.onmousemove = (e) => {
+      const x = e.clientX + 12;
+      const y = e.clientY + 12;
+
+      tooltip.style.left = Math.min(x, window.innerWidth - 240) + "px";
+      tooltip.style.top = Math.min(y, window.innerHeight - 80) + "px";
+    };
+
+    el.onmouseleave = () => {
+      clearTimeout(tooltipTimeout);
+      tooltip.style.opacity = "0";
+    };
+
+  });
+
 }
 
 /* popup */

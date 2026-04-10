@@ -59,8 +59,8 @@ h1 { padding:10px; }
   cursor:pointer;
 }
 
-.dim { opacity:0.25; }
-.elim { opacity:0.05; text-decoration:line-through; }
+.dim { opacity:0.25 !important; }
+.elim { opacity:0.65; background-color: #530101; }
 
 .evidence {
   display:flex;
@@ -127,7 +127,7 @@ h1 { padding:10px; }
 }
 
 .ghostRight {
-  width:300px;
+  width:100px;
   font-size:14px;
   text-align:right;
   opacity:0.8;
@@ -211,4 +211,30 @@ h1 { padding:10px; }
   opacity: 0.3 !important;
   pointer-events: none !important;
   filter: grayscale(100%) !important;
+}
+
+.ghost:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.ghostImg {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* tooltip */
+.tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  max-width: 220px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.1s ease;
 }
