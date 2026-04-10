@@ -44,7 +44,7 @@ const LANG_PL = {
       name: "Gallu",
       sanity: "60-40%",
       speed: "Szybki-wolny",
-      hint: "Trzy stany, zmienia się z solą, kadzidłem i/lub krzyżem. Normalny→wściekły→osłabiony"
+      hint: "Trzy stany, zmienia się z solą, kadzidłem i/lub krzyżem. Normalny → wściekły → osłabiony"
     },
     "Goryo": {
       name: "Goryo",
@@ -56,7 +56,7 @@ const LANG_PL = {
       name: "Hantu",
       sanity: "50%",
       speed: "Zależna od temperatury",
-      hint: "Przyspiesza w niskich temperaturach. Widoczny oddech. Nie może włączyć korków. Nie przyśpiesza przy LOS"
+      hint: "Przyspiesza w niskich temperaturach. Widoczny oddech. Nie włącza korków. Nie przyśpiesza na LOS"
     },
     "Jinn": {
       name: "Jinn",
@@ -110,7 +110,7 @@ const LANG_PL = {
       name: "Onryo",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Nie zacznie polowania jeśli świeca się pali. Rozpoczyna polowanie po zgaszeniu świec (2). Nie może podpalać"
+      hint: "Nie zacznie polowania przy świecy. Rozpoczyna polowanie po zdmuchnięciu świec. Nie może podpalać"
     },
     "Phantom": {
       name: "Phantom",

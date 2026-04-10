@@ -144,8 +144,8 @@ function render(){
 
         <!-- LEFT: stats -->
         <div class="ghostLeft">
-          <div class="stat">${meta.sanity}</div>
-          <div class="stat">${meta.speed}</div>
+          <div class="stat">😱${meta.sanity}</div>
+          <div class="stat">🏃‍♀️${meta.speed}</div>
         </div>
 
         <!-- CENTER: name + evidence -->
@@ -164,7 +164,7 @@ function render(){
 
         <!-- RIGHT: hint -->
         <div class="ghostRight">
-          💡 ${meta.hint}
+          ${meta.hint}
         </div>
 
       </div>
