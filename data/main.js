@@ -243,7 +243,7 @@ function render(){
         <!-- RIGHT: hint -->
         <div class="ghostRight">
           <img 
-            src="data/${g.id.toLowerCase().replace(/\s+/g, "_")}.png"
+            src="data/img/${g.id.toLowerCase().replace(/\s+/g, "_")}.png"
             class="ghostImg"
             
           />
