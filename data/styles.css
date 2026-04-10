@@ -1,0 +1,188 @@
+/* 🚫 no selection anywhere */
+* {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:#e2e8f0;
+  text-align:center;
+}
+
+h1 { padding:10px; }
+
+.controls {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  padding:10px;
+}
+
+.btn {
+  padding:8px 12px;
+  background:#1e293b;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.btn.active {
+  background:#38bdf8;
+  color:black;
+}
+
+.container {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  padding:10px;
+}
+
+.column {
+  flex:1;
+  background:#020617;
+  border-radius:10px;
+  padding:10px;
+}
+
+.column h3 {
+  cursor:pointer;
+}
+
+.ghost {
+  background:#1e293b;
+  margin:6px 0;
+  padding:8px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.dim { opacity:0.25; }
+.elim { opacity:0.05; text-decoration:line-through; }
+
+.evidence {
+  display:flex;
+  gap:6px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.ev {
+  font-size:10px;
+  text-align:center;
+}
+
+.ev span {
+  font-size:18px;
+  display:block;
+}
+
+/* popup */
+#popup {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:#020617;
+  border:1px solid #334155;
+  width:280px;
+  display:none;
+}
+
+#header {
+  background:#1e293b;
+  padding:8px;
+  cursor:move;
+}
+
+#content {
+  padding:10px;
+  font-size:13px;
+}
+
+#close {
+  color:#38bdf8;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.ghostRow {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+/* LEFT SIDE */
+.ghostLeft {
+  width:80px;
+  font-size:12px;
+  opacity:0.9;
+  text-align:left;
+}
+
+/* CENTER */
+.ghostCenter {
+  flex:1;
+  text-align:center;
+}
+
+/* RIGHT SIDE */
+.ghostRight {
+  width:140px;
+  font-size:14px;
+  text-align:right;
+  opacity:0.8;
+}
+
+/* stat styling */
+.stat {
+  background:#0f172a;
+  padding:2px 4px;
+  margin-bottom:4px;
+  border-radius:4px;
+}
+
+#langBtn {
+  position:fixed;
+  top:10px;
+  right:10px;
+  width:32px;
+  height:32px;
+  background:#1e293b;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:999;
+}
+
+#langPopup {
+  position:fixed;
+  top:50px;
+  right:10px;
+  background:#020617;
+  border:1px solid #334155;
+  border-radius:8px;
+  display:none;
+  z-index:999;
+}
+
+.langBox {
+  padding:6px;
+  min-width:120px;
+}
+
+.langItem {
+  padding:6px;
+  cursor:pointer;
+  border-radius:4px;
+}
+
+.langItem:hover {
+  background:#1e293b;
+}
