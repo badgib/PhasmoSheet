@@ -56,7 +56,7 @@ const LANG_PL = {
       name: "Hantu",
       sanity: "50%",
       speed: "Zależna od temperatury",
-      hint: "Przyspiesza w niskich temperaturach. Widoczny oddech. Nie włącza korków. Nie przyśpiesza na LOS"
+      hint: "Przyspiesza w niskich temperaturach. Widoczny oddech. Nie włącza korków. Nie przyśpiesza (LoS)"
     },
     "Jinn": {
       name: "Jinn",
@@ -110,7 +110,7 @@ const LANG_PL = {
       name: "Onryo",
       sanity: "50%",
       speed: "Normalna",
-      hint: "Nie zacznie polowania przy świecy. Rozpoczyna polowanie po zdmuchnięciu świec. Nie może podpalać"
+      hint: "Nie poluje przy świecy. Rozpoczyna po zdmuchnięciu. Nie może podpalać"
     },
     "Phantom": {
       name: "Phantom",

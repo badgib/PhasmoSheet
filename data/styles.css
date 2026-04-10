@@ -180,3 +180,29 @@ h1 { padding:10px; }
 .langItem:hover {
   background:#1e293b;
 }
+
+.clueButton {
+  transition: 0.15s ease;
+}
+.clueButton:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  /* border: 1px solid rgba(255, 255, 255, 0.3) !important; */
+}
+
+/* selected state */
+.clueButton.active {
+  background: rgba(0, 200, 0, 0.35) !important;
+  border: 1px solid rgba(0, 200, 0, 0.7) !important;
+}
+
+/* excluded state — FORCE override everything */
+.clueButton.excluded {
+  background: rgba(255, 0, 0, 0.45) !important;
+  border: 1px solid rgba(255, 0, 0, 0.9) !important;
+  color: #ff4d4d !important;
+}
+
+/* optional: hover safety */
+.clueButton.excluded:hover {
+  background: rgba(255, 0, 0, 0.55) !important;
+}

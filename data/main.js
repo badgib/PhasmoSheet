@@ -48,25 +48,43 @@ let ghosts = [...GHOSTS].sort((a,b)=>
   t().ghosts[a.id]?.name?.localeCompare(t().ghosts[b.id]?.name || a.id) || 0
 );
 
+let buttons = [];
 let selected = [];
 let eliminated = [];
+let excluded = [];
 let focus = "all";
 
 title.innerText = t().title;
 close.innerText = t().close;
 
-/* Evidence buttons (RESTORED) */
 Object.keys(t().evidence).forEach(ev=>{
   const btn=document.createElement("div");
   btn.className="btn clueButton";
-  // btn.id="clueButton";
+
   btn.innerHTML=`${icons[ev]} ${t().evidence[ev]}`;
 
-  btn.onclick=()=>{
-    btn.classList.toggle("active");
+  btn.onclick = (e) => {
+
+    // SHIFT = exclude (red state)
+    if (e.shiftKey) {
+
+      // remove from selected if it was there
+      selected = selected.filter(x => x !== ev);
+
+      // toggle excluded
+      excluded = excluded.includes(ev)
+        ? excluded.filter(x => x !== ev)
+        : [...excluded, ev];
+
+      render();
+      return;
+    }
+
+    // NORMAL CLICK = include
+    excluded = excluded.filter(x => x !== ev);
 
     selected = selected.includes(ev)
-      ? selected.filter(x=>x!==ev)
+      ? selected.filter(x => x !== ev)
       : [...selected, ev];
 
     render();
@@ -97,13 +115,35 @@ function render(){
 
   orbsCol.innerHTML = `<h3>👻 ${t().orbs}</h3>`;
   noOrbsCol.innerHTML = `<h3>🚫 ${t().noOrbs}</h3>`;
+  // let currentControls = ;
+  controls.querySelectorAll(".clueButton").forEach(btn=>{
+    if (selected.includes(Object.keys(icons).find(k => icons[k] === btn.innerText.slice(0, 2)))){
+      btn.classList.add("active");
+      btn.classList.remove("excluded");
+      console.log("selected");
+    } 
+    else if (excluded.includes(Object.keys(icons).find(k => icons[k] === btn.innerText.slice(0, 2)))){
+      btn.classList.add("excluded");
+      btn.classList.remove("active");
+      console.log("excluded");
+    }
+    else{
+      btn.classList.remove("active");
+      btn.classList.remove("excluded");
+      console.log("none", selected);
+    }
+    
+  });
 
   document.querySelector("#orbsCol h3").onclick = ()=>setFocus("orbs");
   document.querySelector("#noOrbsCol h3").onclick = ()=>setFocus("noOrbs");
 
   ghosts.forEach(g=>{
     const hasOrbs = g.evidence.includes("Orbs");
-    const match = selected.every(e=>g.evidence.includes(e));
+    // const match = selected.every(e=>g.evidence.includes(e));
+    const match =
+      selected.every(e => g.evidence.includes(e)) &&
+      excluded.every(e => !g.evidence.includes(e));
     const elim = eliminated.includes(g.id);
     const meta = t().ghosts[g.id]
 
